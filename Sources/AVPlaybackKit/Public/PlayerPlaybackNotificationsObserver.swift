@@ -22,6 +22,11 @@ public class PlayerPlaybackNotificationsObserver {
     public struct PlaybackNotification {
         public let status: Status
         public let item: AVPlayerItem?
+
+        public init(status: Status, item: AVPlayerItem?) {
+            self.status = status
+            self.item = item
+        }
     }
 
     public typealias PublisherType = AnyPublisher<PlaybackNotification, Never>
