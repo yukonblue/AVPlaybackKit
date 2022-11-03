@@ -5,6 +5,7 @@ import PackageDescription
 
 let package = Package(
     name: "AVPlaybackKit",
+    platforms: [.iOS(.v15)],
     products: [
         // Products define the executables and libraries a package produces, and make them visible to other packages.
         .library(
@@ -23,6 +24,7 @@ let package = Package(
             dependencies: []),
         .testTarget(
             name: "AVPlaybackKitTests",
-            dependencies: ["AVPlaybackKit"]),
+            dependencies: ["AVPlaybackKit"],
+            resources: [.copy("Resources/sample-3s.mp3")]),
     ]
 )
